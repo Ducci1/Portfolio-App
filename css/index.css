@@ -20,7 +20,7 @@ header{
 
 #logo{
     position: absolute;
-    max-height: 25%;
+    max-height: 20%;
     margin-left: 5%;
 }
 
@@ -32,9 +32,10 @@ section{
     justify-content: center;
 }
 
-body img{
+#tech{
     max-height: 400px;
     max-width: 400px;
+    margin-left: 2%;
 }
 
 .container{
@@ -58,6 +59,7 @@ form{
     padding-top: 30px;
     color: #191970;
     font-family: 'Open Sans', sans-serif;
+    margin-right: 2%;
 }
 
 input{
