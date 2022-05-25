@@ -14,17 +14,18 @@ body{
 
 header{
     width: 100%;
-    height: 15%;
+    height: 10%;
 }
 
 
 #logo{
-    max-height: 100%;
+    position: absolute;
+    max-height: 25%;
     margin-left: 5%;
 }
 
 section{
-    height: 85%;
+    height: 90%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -37,7 +38,7 @@ body img{
 }
 
 .container{
-    width: 1200px;
+    width: 1100px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -64,9 +65,9 @@ input{
     border: none;
     outline: none;
     border-radius: 5px;
-    padding-left: 20px;
+    padding: 0 40px 0 40px;
     height: 35px;
-    width: 280px;
+    width: 220px;
 }
 
 a{
@@ -103,11 +104,12 @@ h3{
 }
 
 .design{
-    height: 14%;
+    height: 17%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-size: 13px;
+    position: relative;
 }
 
 .username{
@@ -131,9 +133,32 @@ button{
     background-color: rgba(25, 25, 112, 0.3);
     border-radius: 5px;
     border: none;
+    color: #191970;
 }
 
 button:hover{
     background-color: rgba(25, 25, 112, 0.7);
     cursor: pointer;
+}
+
+.fa-envelope, .fa-lock{
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+}
+
+#eye{
+    position: absolute;
+    right: 5%;
+    bottom: 15%;
+}
+
+#eye:hover{
+    cursor: pointer;
+}
+
+.error{
+    font-size: 10px;
+    color: red;
+    font-style: italic;
 }
