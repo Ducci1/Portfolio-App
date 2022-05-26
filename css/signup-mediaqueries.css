@@ -8,10 +8,13 @@
     }
 }
 
-@media only screen and (max-width: 450px){
-    header{
-        display: none;
+@media only screen and (max-width: 850px) {
+    #logo{    
+        max-height: 15%;
     }
+}
+
+@media only screen and (max-width: 450px){
     #logo, #tech{
         display: none;
     }
@@ -19,7 +22,7 @@
         height: 100%;
         width: 100%;
     }
-    form{
+    .form, #form2{
         width: 100%;
         height: 100%;
         border-radius: 0;
@@ -30,6 +33,22 @@
     }
     .design{
         height: 80px;
+    }
+    .design2{
+        height: 10%;
+    }
+    .name, .createpassword{
+        width: 300px;
+        height: 8%;
+    }
+    .createpassword{
+        height: 20%;
+    }
+    .one{
+        bottom: 10%;
+    }
+    .three, #eye4{
+        top: 32%;
     }
 }
 
@@ -46,8 +65,29 @@
     input{
         width: 180px;
     }
-    .btn{
+    .btn, .name, .createpassword{
         width: 260px;
+    }
+    .name{
+        flex-direction: column;
+        height: 15%;
+    }
+    #firstname, #lastname{
+        width: 180px;
+        padding-right: 40px;
+    }
+    .firstname, .lastname{
+        height: 100%;
+    }
+    .firstname{
+        margin-bottom: 4%;
+    }
+    .fa-user{
+        top: 27%;
+    }
+    .two{
+        top: 81%;
+        left: 5%;
     }
 }
 
@@ -64,11 +104,15 @@
     input{
         width: 130px;
     }
-    .btn{
+    .btn, .name, .createpassword{
         width: 210px;
     }
     .error{
         font-size: 7px;
+    }
+    #firstname, #lastname{
+        width: 130px;
+        padding-right: 40px;
     }
 }
 
@@ -82,10 +126,13 @@
     .design, #create, #forgot{
         font-size: 5px;
     }
+    .fa-envelope, .fa-lock, #eye{
+        bottom: 25%;
+    }
     input{
         width: 80px;
     }
-    .btn{
+    .btn, .name, .createpassword{
         width: 160px;
     }
     .error{
@@ -93,5 +140,9 @@
     }
     .design{
         height: 60px;
+    }
+    #firstname, #lastname{
+        width: 80px;
+        padding-right: 40px;
     }
 }

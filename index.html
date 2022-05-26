@@ -14,14 +14,12 @@
     <script src="./javascript/signup.js" defer></script>
 </head>
 <body>
-    <header>
-        <img src="./images/logo.svg" alt="logo" id="logo">
-    </header>
+    <img src="./images/logo.svg" alt="logo" id="logo">
     <section>
         <div class="container">
             <img src="./images/2.png" alt="tech" id="tech">
-            <form>
-                <h2>Welcome Back 😁</h2>
+            <form id="form1" class="form">
+                <h2>Welcome 😁</h2>
                 <h3>Let's get you back in...</h3>
                 <div class="username design">
                     <label for="username">Username or Email Address</label>
@@ -37,8 +35,48 @@
                     <input name="password" type="password" id="password" required>
                 </div>
                 <div class="btn"><button type="submit">Log In</button></div>
-                <h4 id="create">Don't have an account? <a href="#">Sign up Here</a></h4>
+                <h4 id="create">Don't have an account? <a href="#" id="sign-up">Sign up Here</a></h4>
                 <a href="#" id="forgot">Forgot Password?</a>
+            </form>
+            <form id="form2" class="form">
+                <h2>Hey There 👋</h2>
+                <h3>Creating an account with us is easy</h3>
+                <div class="emailaddress design2">
+                    <label for="username">Email Address</label>
+                    <p id="error3" class="error"></p>
+                    <i class="fa-solid fa-envelope one"></i>
+                    <input name="emailaddress" type="text" id="emailaddress" required>
+                </div>
+                <div class="name design2">
+                    <div class="firstname">
+                        <label for="firstname">First Name</label>
+                        <i class="fa-solid fa-user"></i>
+                        <input name="firstname" type="text" id="firstname" required>
+                    </div>
+                    <div class="lastname">
+                        <label for="lastname">Last Name</label>
+                        <i class="fa-solid fa-user two"></i>
+                        <input name="lastname" type="text" id="lastname" required>
+                    </div>
+                </div>
+                <div class="createpassword design2">
+                    <div class="newpassword">
+                        <label for="newpassword">Password</label>
+                        <p id="error4" class="error"></p>
+                        <i class="fa-solid fa-lock three"></i>
+                        <i class="fa-solid fa-eye-slash" id="eye4"></i>
+                        <input name="newpassword" type="password" id="newpassword" required>
+                    </div>
+                    <div class="confirmpassword">
+                        <label for="confirmpassword">Confirm Password</label>
+                        <p id="error5" class="error"></p>
+                        <i class="fa-solid fa-lock five"></i>
+                        <i class="fa-solid fa-eye-slash" id="eye6"></i>
+                        <input name="confirmpassword" type="password" id="confirmpassword" required>
+                    </div>
+                </div>
+                <div class="btn"><button type="submit" id="create-btn">Create Account</button></div>
+                <h4 id="create">Already have an account? <a href="#" id="sign-in">Sign in Here</a></h4>
             </form>
         </div>
     </section>
