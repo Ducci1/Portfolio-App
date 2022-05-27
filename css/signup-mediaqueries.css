@@ -18,9 +18,8 @@
     #logo, #tech{
         display: none;
     }
-    section, .container{
-        height: 100%;
-        width: 100%;
+    section{
+        background-color: white;
     }
     .form, #form2{
         width: 100%;
@@ -30,6 +29,7 @@
         padding: 0;
         justify-content: center;
         overflow: hidden;
+        box-shadow: none;
     }
     .design{
         height: 80px;
@@ -48,7 +48,10 @@
         bottom: 10%;
     }
     .three, #eye4{
-        top: 32%;
+        top: 25%;
+    }
+    .five, #eye6{
+        top: 80%;
     }
 }
 
