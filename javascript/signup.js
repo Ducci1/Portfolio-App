@@ -10,12 +10,14 @@ const SIGNUP = document.getElementById("sign-up");
 const SIGNIN = document.getElementById("sign-in");
 const FORM1 = document.getElementById("form1");
 const CREATEBUTTON = document.getElementById("create-btn");
+const LOGIN = document.getElementById("login");
 
 const emailAddress =  document.getElementById("emailaddress");
 const firstName =  document.getElementById("firstname");
 const lastName =  document.getElementById("lastname");
+const userName =  document.getElementById("username");
 
-
+/********Controls the Password Visibility************* */
 const EYES = [EYE, EYE1, EYE2];
 const PASSWORDS = [PASSWORD, PASSWORD1, PASSWORD2];
 
@@ -29,14 +31,6 @@ const passwordVisibility = () => {
         EYES[value].classList.replace("fa-eye", "fa-eye-slash");
         PASSWORDS[value].type = "password";
     }
-}
-
-const clearForm = () => {
-    document.getElementById("error5").textContent = "";
-    document.getElementById("error4").textContent = "";
-    document.getElementById("error3").textContent = "";
-    document.getElementById("error2").textContent = "";
-    document.getElementById("error1").textContent = "";
 }
 
 EYE.addEventListener("click", () => {
@@ -54,27 +48,54 @@ EYE2.addEventListener("click", () => {
     passwordVisibility();
 })
 
+/****************************************************** */
 
-CREATEBUTTON.addEventListener("click", (event) => {
+
+const clearForm = () => {
     document.getElementById("error5").textContent = "";
     document.getElementById("error4").textContent = "";
     document.getElementById("error3").textContent = "";
+    document.getElementById("error2").textContent = "";
+    document.getElementById("error1").textContent = "";
+}
 
-    if (emailAddress.value && firstName.value && lastName.value && PASSWORD1.value && PASSWORD2.value){
-        if (PASSWORD1.value == PASSWORD2.value && PASSWORD1.value.length >= 8){
+const clearInputFields = () => {
+    PASSWORD.value = "";
+    PASSWORD1.value = "";
+    PASSWORD2.value = "";
+    emailAddress.value = "";
+    firstName.value = "";
+    lastName.value = "";
+    userName.value = "";
+}
+
+
+/* Event Listeners for Signup, Login, and create buttons */
+CREATEBUTTON.addEventListener("click", (event) => {
+    clearForm();
+
+    let purifiedPASSWORD1 = DOMPurify.sanitize(PASSWORD1.value);
+    let purifiedPASSWORD2 = DOMPurify.sanitize(PASSWORD2.value);
+    let purifiedEmailAddress = DOMPurify.sanitize(emailAddress.value);
+    let purifiedFirstName = DOMPurify.sanitize(firstName.value);
+    let purifiedLastName = DOMPurify.sanitize(lastName.value);
+
+    if (purifiedEmailAddress && purifiedFirstName && purifiedLastName && purifiedPASSWORD1 && purifiedPASSWORD2){
+        if (purifiedPASSWORD1 == purifiedPASSWORD2 && purifiedPASSWORD1.length >= 8){
             alert("Success");
-        } else if (PASSWORD1.value != PASSWORD2.value && PASSWORD1.value.length >= 8) {
+        } else if (purifiedPASSWORD1 != purifiedPASSWORD2 && purifiedPASSWORD1.length >= 8) {
             event.preventDefault();
             document.getElementById("error5").textContent = "*The two passwords do not match each other*";
-        } else if (PASSWORD1.value.length < 8) {
+        } else if (purifiedPASSWORD1.length < 8) {
             event.preventDefault();
-            document.getElementById("error4").textContent = "*Password is less than 8 digits*";
+            document.getElementById("error4").textContent = "Password is less than 8 digits*";
         }
     }
 })
 
 SIGNUP.addEventListener("click", () => {
     clearForm();
+    clearInputFields();
 
     document.getElementById("form1").style.display = "none";
     document.getElementById("form2").style.display = "flex";
@@ -82,9 +103,15 @@ SIGNUP.addEventListener("click", () => {
 
 SIGNIN.addEventListener("click", () => {
     clearForm();
+    clearInputFields();
 
     document.getElementById("form1").style.display = "flex";
     document.getElementById("form2").style.display = "none";
 })
 
+LOGIN.addEventListener("click", () => {
+    let purifiedUserName = DOMPurify.sanitize(userName.value);
+    let purifiedPASSWORD = DOMPurify.sanitize(PASSWORD.value);
+})
+/****************************************************************/
 
